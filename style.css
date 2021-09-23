@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+html,
+body {
+  height: 100%;
+  overflow-y: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #923cb5;
+  background-image: linear-gradient(147deg, #64236d 0%, #000 74%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+canvas {
+  border: 7px solid rgb(255, 245, 245);
+  border-radius: 10px;
+  display: none;
+}
+#button {
+  position: absolute;
+  padding: 30px 80px;
+  border-radius: 10px;
+  outline: none;
+  font-family: "Gluten", cursive;
+  font-weight: 700;
+  font-size: 35px;
+  background-color: whitesmoke;
+  border: none;
+  display: block;
+  transition-duration: 0.3s;
+}
+#button:hover {
+  outline: none;
+  border: none;
+  font-size: 30px;
+  transition-duration: 0.3s;
+  padding: 25px 70px;
+}
+
+#button:focus {
+  animation: fade-out ease 1.5s;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#cTime {
+  font-family: "Gluten", cursive;
+  font-size: 200px;
+  color: whitesmoke;
+  -webkit-text-stroke: 15px rgb(59, 156, 83);
+  display: none;
+}
+
+#Starting {
+  font-family: "Gluten", cursive;
+  font-size: 150px;
+  color: whitesmoke;
+  display: none;
+  font-weight: 300;
+}
+
+#c2 {
+  font-family: "Gluten", cursive;
+  font-size: 200px;
+  color: whitesmoke;
+  -webkit-text-stroke: 15px rgb(204, 144, 53);
+  display: none;
+}
+#c1 {
+  font-family: "Gluten", cursive;
+  font-size: 200px;
+  color: whitesmoke;
+  -webkit-text-stroke: 15px rgb(196, 85, 66);
+  display: none;
+}
+
+#soundonbtn {
+  position: absolute;
+  margin-top: 90vh;
+  margin-right: 95vw;
+  font-size: 40px;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+#soundoffbtn {
+  position: absolute;
+  margin-top: 90vh;
+  margin-right: 95vw;
+  font-size: 40px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  display: none;
+}
+
+#cpick {
+  position: absolute;
+  text-align: center;
+  margin-top: 60vh;
+}
+.ctext {
+  margin-top: 10px;
+  color: white;
+  font-family: "Gluten", cursive;
+  font-weight: 300;
+  font-size: 20px;
+}
+#head {
+  font-family: "Gluten", cursive;
+  margin-bottom: auto;
+  margin-top: 10vh;
+  font-size: 50px;
+  color: white;
+  animation: hove 1.5s infinite;
+  display: inline-block;
+}
+
+#color {
+  -webkit-appearance: none;
+  border: 3px solid white;
+  border-radius: 5px;
+  width: 10vh;
+  height: 5vh;
+  outline: none;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+
+@keyframes hove {
+  0% {
+    font-size: 54px;
+  }
+
+  50% {
+    font-size: 50px;
+  }
+
+  100% {
+    font-size: 54px;
+  }
+}
+
+#stop {
+  position: absolute;
+  margin-left: 90vw;
+  margin-bottom: 85vh;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 50px;
+  display: none;
+}
+
+#score {
+  color: white;
+  position: absolute;
+  margin-top: 80vh;
+  font-family: "Gluten", cursive;
+  display: none;
+}
+#scoretext {
+  margin-right: 10px;
+}
+#scoretext2 {
+  margin-left: 10px;
+}
+
+#high {
+  color: white;
+  position: absolute;
+  margin-bottom: 60vh;
+  font-family: "Gluten", cursive;
+  display: flex;
+}
+#hightext {
+  margin-right: 12px;
+}
+
+#usescookies {
+  margin-top: 75vh;
+  position: absolute;
+  padding: 10px 25px 10px 25px;
+  border-radius: 20px;
+  margin-right: 60vw;
+  /* transform: translateX(-60%); */
+  background-color: rgba(34, 34, 34, 0.95);
+  display: none;
+}
+#cookiehead {
+  color: white;
+  font-family: "Gluten", cursive;
+  font-weight: 400;
+  text-align: center;
+}
+#cookiep {
+  margin-top: 10px;
+  color: white;
+  font-family: "Gluten", cursive;
+  font-weight: 200;
+  text-align: center;
+}
+#cookieb {
+  margin-top: 10px;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(72, 173, 63);
+  font-family: "Gluten", cursive;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#buttoncenter {
+  margin-left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translateX(-40%);
+}
+
+#cookieb:hover {
+  cursor: pointer;
+}
+
+#cookieslink {
+  color: white;
+}
+
+@keyframes button-fade-out {
+  from {
+    opacity: 0.95;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes pop-up {
+  from {
+    margin-top: 150vh;
+    margin-right: 60vw;
+  }
+  to {
+    margin-top: 75vh;
+    margin-right: 60vw;
+  }
+}

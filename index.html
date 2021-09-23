@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./427533.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+
+<h1 id="head">Welcome to Snake!</h1>
+
+<button id="stop" onclick="stopgame()"><i class="far fa-times-circle"></i></button>
+<button id="button" onclick="start()">Start</button>
+
+<div id="high">
+  <h1 id="hightext">Your highscore is: </h1><h1 id="highscore">0</h1>
+</div>
+
+<div id="canvas">
+<canvas width="400" height="400" id="game"></canvas>
+</div>
+
+<h1 id="cTime">3</h1>
+<h1 id="Starting">Starting...</h1>
+
+<div id="cpick">
+  <input type="color" id="color">
+  <h5 class="ctext">Pick your snake's color!</h5>
+</div>
+
+<div id="score">
+<h1 id="scoretext">You ate: </h1><h1 id="scoreboard">0</h1> <h1 id="scoretext2"> apples!</h1>
+</div>
+
+<button id="soundonbtn" onclick="sound()" title="Mute Sound"><i class="fas fa-volume-up"></i></button>
+<button id="soundoffbtn" onclick="sound()" title="Unmute Sound"><i class="fas fa-volume-mute"></i></button>
+
+<div id="usescookies">
+  <h2 id="cookiehead">This website uses cookies 🍪</h2>
+  <p id="cookiep">Cookies are being stored for 365 days to keep track of your highscore. <br>Please be aware that if you delete your cookies, your highscore will reset. <br>By clicking Ok you agree to using cookies. Click here to <a href="#" id="cookieslink">learn more</a></p>
+  <div id="buttoncenter">
+  <button id="cookieb" onclick="closecookies()">Ok, Thank you.</button>
+  </div>
+</div>
+
+
+<script src="./script.js"></script>
+</body>
+</html>
