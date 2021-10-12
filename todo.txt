@@ -2,24 +2,24 @@ To Do:
 
 Dark Mode / Lightmode
 
-✓ Scoreboard ✓
-
-✓ Highscore => COOKIES ✓ 
-
-This website uses cookies
-
-Store met appels || HARD => DATABASE?
+Store met appels || HARD => DATABASE? / ACCOUNT NEEDED
 
 Patronen Snake => LOOK FOR FIRST BLOCK CHANGE DESIGN
 
 Appel icoon veranderen || HARD
 
-Animated achtergrond 
-
-Gameover screen
-
 Sure you want to quit screen || NEED PAUSE
 
+-------------------------------------------------------
 
-  context.fillRect(apple.x, apple.y, grid-1, grid-1);
-context.fillStyle = "#F24646";
+✓ Gameover screen ✓
+
+✓ Scoreboard ✓
+
+✓ Highscore => COOKIES ✓ 
+
+✓ This website uses cookies ✓
+^ Dont show when user already has cookies
+
+✓ Animated achtergrond ✓
+

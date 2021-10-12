@@ -14,6 +14,7 @@ var highScore = 0
 var score = document.getElementById("score")
 var high = document.getElementById("highscore")
 var highDiv = document.getElementById("high")
+var gameover = false
 
 // COOKIE CHECKER
 
@@ -72,6 +73,7 @@ window.onload = setTimeout(() => {
   cookiesdiv.style.animation = "pop-up 2s ease"
 }, 700);
 
+
 function closecookies(){
   var cookiesdiv = document.getElementById("usescookies");
   cookiesdiv.style.animation = "button-fade-out 1.2s ease"
@@ -114,7 +116,17 @@ function stopgame() {
   location.reload()
 }
 
+var oldHighScore
+
 function start() {
+  if(gameover == true){
+    gameover = false
+    var gameoverscreen = document.getElementById("gameover")
+    gameoverscreen.style.display = "none"
+    appleCount = 0
+  }
+  oldHighScore = highScore
+
   setTimeout(() => {
     b.style.display = "none";
   }, 1300);
@@ -127,9 +139,13 @@ function start() {
   var picker = document.getElementById("cpick")
   var wtext = document.getElementById("head")
   var stop = document.getElementById("stop")
+  var scoreboard = document.getElementById("score")
 
+  highDiv.style.display = "none"
   picker.style.display = "none"
   wtext.style.display = "none"
+  c.style.display = "none";
+  scoreboard.style.display = "none"
 
   if (playSound == true){
   setTimeout(() => {
@@ -151,31 +167,19 @@ var Timer = setInterval(function(){
         score.style.display = "flex"
         highDiv.style.display = "flex"
         highDiv.style.marginBottom = "70vh"
+      if(timeleft = 1){
+        cTime.style.webkitTextStroke = "15px rgb(196, 85, 66)"
+      }
     } else {
-        Starting.style.display = "none"
-        cTime.style.display = "block";
-        highDiv.style.display = "none"
         changeColor()
+        Starting.style.display = "none"
+        cTime.style.display = "block"
+        c.style.display = "none"
         cTime.innerHTML = timeleft;
     }
     timeleft -= 1;
     }, 1000)
-/*
-    setTimeout(function(){
-    c3.style.display = "none";
-    c2.style.display = "block";
-    }, 1000);
 
-    setTimeout(function(){
-    c2.style.display = "none";
-    c1.style.display = "block";
-    }, 1000);
-            
-    setTimeout(function(){
-    c1.style.display = "none";
-    c.style.display = "block";
-    }, 1000);
-*/
 }
 
 
@@ -254,7 +258,7 @@ function loop() {
   context.fillStyle = "#F24646";
   context.fillRect(apple.x, apple.y, grid-1, grid-1);
 
-  // draw snake one cell at a time
+  // draw snake one cell at a time  
   context.fillStyle = defaultColor;
   context.strokeStyle = "#ffffff"
   context.lineWidth = 1.5;
@@ -262,6 +266,8 @@ function loop() {
   snake.cells.forEach(function(cell, index) {
     
     // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
+    if(gameover == false){
+    
     context.fillRect(cell.x, cell.y, grid-2, grid-2);  
     context.strokeRect(cell.x, cell.y, grid-2, grid-2);
 
@@ -287,6 +293,7 @@ function loop() {
       // canvas is 400x400 which is 25x25 grids 
       apple.x = getRandomInt(0, 25) * grid;
       apple.y = getRandomInt(0, 25) * grid;
+      
     }
 
     // check collision with all cells after this one (modified bubble sort)
@@ -294,7 +301,7 @@ function loop() {
       
       // snake occupies same space as a body part. reset game
       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-        appleCount = 0
+        gameover = true
         scoreboard.innerHTML = appleCount
         snake.x = 160;
         snake.y = 160;
@@ -307,6 +314,32 @@ function loop() {
         apple.y = getRandomInt(0, 25) * grid;
       }
     }
+  }
+  if(gameover == true){
+    var gameoverscreen = document.getElementById("gameover")
+    var score = document.getElementById("finalscore")
+    var highscoretxt = document.getElementById("gohigh")
+    var highscore = document.getElementById("highscorego")
+    var newDiv = document.getElementById("newscorediv")
+    var newScore = document.getElementById("newhscore")
+    
+    score.innerHTML = appleCount
+    if(highScore > oldHighScore){
+      highscoretxt.innerHTML = "You broke your old highscore of:"
+      highscore.innerHTML = oldHighScore
+      newScore.innerHTML = highScore
+    }
+    if(oldHighScore >= highScore){
+      newDiv.style.display = "none"
+      highscore.innerHTML = highScore
+      gameoverscreen.style.padding = "12vh 60px 12vh 60px"
+      highscoretxt.innerHTML = "You did not break your highscore of: "
+    }
+    gameoverscreen.style.display = "block"
+
+    return
+    
+  }
   });
 }
 
