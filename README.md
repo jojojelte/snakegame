@@ -1,3 +1,6 @@
+## Play now on https://jojojelte.github.io/snakegame/
+###### Please keep in mind this version is slighty outdated.
+
 # Snakegame
 
 A simple snake game fully made in html + javascript. No extra libaries used.
