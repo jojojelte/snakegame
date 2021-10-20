@@ -1,7 +1,9 @@
-# snakegame
+# Snakegame
 
 A simple snake game fully made in html + javascript. No extra libaries used.
-Remembers your highscore with cookies (unless you decline)
+
+Remembers your highscore with cookies (unless you decline).
+
 Has fully working sound intergration.
 
 # Upcoming:
